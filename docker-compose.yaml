@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  database:
+    image: mongo:6.0.4-jammy
+    restart: always
+    container_name: thullo_db
+    ports:
+      - 27017:27017
+    environment:
+      MONGODB_DATABASE: thullo_app
+    volumes:
+      - ./database:/data/db
